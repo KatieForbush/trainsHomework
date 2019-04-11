@@ -13,22 +13,23 @@ var database = firebase.database();
 
 var trainName = "";
 var trainDestination = "";
-var trainTime = 0;
+var trainTime = "HH:mm";
 var frequency = 0;
 
 // Capture Button Click
-$("#button").on("click", function(event) {
+$(".btn btn-primary").on("click", function(event) {
     event.preventDefault();
 
     // Grabbed values from text-boxes
     trainName = $("#trainName-input").val().trim();
+    console.log(trainName);
     trainDestination = $("#trainDestination-input").val().trim();
-    trainTime = $("trainTime-input").val().trim();
-    frequency = $("#trainFrequency-input").val().trim();
+    trainTime = moment($("#trainTime-input").val(), "HH:mm").format("X");
+    frequency = $("#trainFrequency-input").val(), "mm";
 
     // Code for "Setting values in the database"
     database.ref().set({
-      Name: trainNAme,
+      Name: trainName,
       Destination: trainDestination,
       Time: trainTime,
       Frequencey: frequency,
