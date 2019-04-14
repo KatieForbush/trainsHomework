@@ -24,7 +24,9 @@ $(".btn").on("click", function(event) {
     trainName = $("#trainName-input").val().trim();
     //console.log(trainName);
     trainDestination = $("#trainDestination-input").val().trim();
-    trainTime = moment($("#trainTime-input").val(), "HH:mm").format("X");
+    console.log($("#firstTrainTime-input").val())
+    trainTime = moment($("#firstTrainTime-input").val(), "HH:mm").format("X");
+    console.log(trainTime);
     frequency = moment($("#trainFrequency-input").val(), "mm");
 
     var traininfo = {
@@ -55,7 +57,7 @@ $(".btn").on("click", function(event) {
     var trainFrequency = childSnapshot.val().frequency;
 
     var newRow = $("<tr>").append(
-      $("<td>").text(trainName),
+      $("<th>").text(trainName),
       $("<td>").text(trainDestination),
       $("<td>").text(trainTime),
       $("<td>").text(trainFrequency)
