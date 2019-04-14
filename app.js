@@ -26,7 +26,7 @@ $(".btn").on("click", function(event) {
     trainDestination = $("#trainDestination-input").val().trim();
     trainTime = moment($("#trainTime-input").val(), "HH:mm").format("X");
     frequency = moment($("#trainFrequency-input").val(), "mm");
-    
+
     var traininfo = {
       name: trainName,
       destination: trainDestination,
@@ -50,7 +50,16 @@ $(".btn").on("click", function(event) {
     console.log(childSnapshot.val());
 
     var trainName = childSnapshot.val().name;
-    var trainDesination = childSnapshot.val().destination;
+    var trainDestination = childSnapshot.val().destination;
     var trainTime = childSnapshot.val().time;
     var trainFrequency = childSnapshot.val().frequency;
-  })
+
+    var newRow = $("<tr>").append(
+      $("<td>").text(trainName),
+      $("<td>").text(trainDestination),
+      $("<td>").text(trainTime),
+      $("<td>").text(trainFrequency)
+    );
+
+    $(".trains").append(newRow);
+  });
