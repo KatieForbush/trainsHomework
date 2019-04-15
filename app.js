@@ -24,10 +24,11 @@ $(".btn").on("click", function(event) {
     trainName = $("#trainName-input").val().trim();
     //console.log(trainName);
     trainDestination = $("#trainDestination-input").val()
-    frequency = moment($("#trainFrequency-input").val(), "mm");
+    // frequency = moment($("#trainFrequency-input").val(), "mm");
     trainTime = moment($("#firstTrainTime-input").val(), "HH:mm").format('LT');
     console.log(trainTime);
-
+    var xyz = $("#trainFrequency-input").val()
+    console.log(xyz);
 
     var traininfo = {
       name: trainName,
@@ -40,29 +41,29 @@ $(".btn").on("click", function(event) {
     // Code for "Setting values in the database"
     database.push(traininfo);
     
-    console.log(traininfo.name);
+    //console.log(traininfo.name);
 
     $("#trainName-input").val("");
     $("#trainDesination-input").val("");
     $("#trainFrequency-input").val("");
-    $("#trainTime-input").val("");
+    $("#firstTrainTime-input").val("");
 
 
   });
 
   database.on("child_added", function(childSnapshot) {
-    console.log(childSnapshot.val());
+    // console.log(childSnapshot.val());
 
     var trainName = childSnapshot.val().name;
     var trainDestination = childSnapshot.val().destination;
     var trainFrequency = childSnapshot.val().frequency;
-    var trainTime = childSnapshot.val().time;
+    var firstTrainTime = childSnapshot.val().time;
 
     var newRow = $("<tr>").append(
       $("<th>").text(trainName),
       $("<td>").text(trainDestination),
       $("<td>").text(trainFrequency),
-      $("<td>").text(trainTime)
+      $("<td>").text(firstTrainTime)
     );
 
     $(".trains").append(newRow);

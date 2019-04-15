@@ -30,75 +30,81 @@
             </div>
         </div>
     </div>
-    </div> -->
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col" style="font-size: 20px">Train Name</th>
-            <th scope="col" >Destination</th>
-            <th scope="col">Frequency</th>
-            <th scope="col">Next Arrival</th>
-            <th scope="col">Minutes Away</th>
-          </tr>
-        </thead>
-        <tbody class= "trains">
-          <tr>
-            <th>Hogwarts express</th>
-            <td>Hogwarts</td>
-            <td>20 mins</td>
-            <td>2:00 pm</td>
-            <td>5 mins</td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    <form>
-        <div class="container">
-            <div class="form-group">
-                <div class="row-5">
-                    <div class="col-12">
-                        <label for="trainName">Train Name</label>
-                        <input type="text" id="trainName-input" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="row-5">
-                    <div class="col-12">
-                        <label for="whereTo">Destination</label>
-                        <input type="text" id="trainDestination-input" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="row-5">
-                    <div class="col-12">
-                        <label for="firstTrainTime">First Train Time (HH:mm - Military Time)</label>
-                        <input type="text" id="firstTrainTime-input" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="row-5">
-                    <div class="col-12">
-                        <label for="frequencyOfTrain">Frequency</label>
-                        <input type="text" id ="trainFrequencey-input" class="form-control">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row-5">
+    </div>
+    <div class="container">
+        <div class="row">
             <div class="col-12">
-                <button type="submit" id="button" class="btn btn-primary">Submit</button>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="font-size: 20px">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody class="trains">
+                        <tr>
+                            <th>Hogwarts express</th>
+                            <td>Hogwarts</td>
+                            <td>20 mins</td>
+                            <td>2:00 pm</td>
+                            <td>5 mins</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <form>
+                    <div class="container">
+                        <div class="form-group">
+                            <div class="row-5">
+                                <div class="col-12">
+                                    <label for="trainName">Train Name</label>
+                                    <input type="text" id="trainName-input" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row-5">
+                                <div class="col-12">
+                                    <label for="whereTo">Destination</label>
+                                    <input type="text" id="trainDestination-input" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row-5">
+                                <div class="col-12">
+                                    <label for="firstTrainTime">First Train Time (HH:mm - Military Time)</label>
+                                    <input type="text" id="firstTrainTime-input" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row-5">
+                                <div class="col-12">
+                                    <label for="frequencyOfTrain">Frequency</label>
+                                    <input type="text" id="trainFrequency-input" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-5">
+                        <div class="col-12">
+                            <button type="submit" id="button" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-    </form>
+    </div>
     </div>
 
 
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <script src="app.js"></script>
- 
+
 </body>
 
 </html>
