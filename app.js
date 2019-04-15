@@ -23,9 +23,8 @@ $(".btn").on("click", function(event) {
     // Grabbed values from text-boxes
     trainName = $("#trainName-input").val().trim();
     //console.log(trainName);
-    trainDestination = $("#trainDestination-input").val().trim();
-    console.log($("#firstTrainTime-input").val())
-    trainTime = moment($("#firstTrainTime-input").val(), "HH:mm").format("X");
+    trainDestination = $("#trainDestination-input").val()
+    trainTime = moment($("#firstTrainTime-input").val(), "HH:mm").format('LT');
     console.log(trainTime);
     frequency = moment($("#trainFrequency-input").val(), "mm");
 
