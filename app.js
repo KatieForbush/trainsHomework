@@ -24,11 +24,10 @@ $(".btn").on("click", function(event) {
     trainName = $("#trainName-input").val().trim();
     //console.log(trainName);
     trainDestination = $("#trainDestination-input").val()
-    // frequency = moment($("#trainFrequency-input").val(), "mm");
     trainTime = moment($("#firstTrainTime-input").val(), "HH:mm").format('LT');
-    console.log(trainTime);
-    var xyz = $("#trainFrequency-input").val()
-    console.log(xyz);
+  
+    trainFrequency = $("#trainFrequency-input").val()
+
 
     var traininfo = {
       name: trainName,
@@ -52,7 +51,7 @@ $(".btn").on("click", function(event) {
   });
 
   database.on("child_added", function(childSnapshot) {
-    // console.log(childSnapshot.val());
+    console.log(childSnapshot.val());
 
     var trainName = childSnapshot.val().name;
     var trainDestination = childSnapshot.val().destination;
