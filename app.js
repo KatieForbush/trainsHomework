@@ -1,3 +1,21 @@
+var seedInfo = [{
+  "trainName": "Hogwarts Express",
+  "trainDestination": "Hogwarts",
+  "trainTime": "09:00",
+  "trainFrequency": "20",
+}, {
+  "trainName": "Rainbow",
+  "trainDestination": "Rainbow Road",
+  "trainTime": "08:00",
+  "trainFrequency": "10",
+},
+{
+  "trainName": "ChristropherR",
+  "trainDestination": "100 Acre Wood",
+  "trainTime": "09:30",
+  "trainFrequency": "30"
+}];
+
 var config = {
     apiKey: "AIzaSyDP9gMSt9dwxl9m17-5-Ggq_SyIw7O-4io",
     authDomain: "trainshomework-c66df.firebaseapp.com",
@@ -9,8 +27,27 @@ var config = {
 
 firebase.initializeApp(config);
 
+
 var database = firebase.database().ref();
 
+for (var i = 0; i < seedInfo.length; i++){
+  let traininfo = {
+    name: seedInfo[i].trainName,
+    destination: seedInfo[i].trainDestination,
+    frequency: seedInfo[i].trainFrequency,
+    time: seedInfo[i].trainTime
+}
+database.push(traininfo);
+
+}
+
+var traininfo = {
+  name: trainName,
+  destination: trainDestination,
+  frequency: trainFrequency,
+  time: trainTime
+  
+};
 var trainName = "";
 var trainDestination = "";
 var trainTime = "HH:mm";
