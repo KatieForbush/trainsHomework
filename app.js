@@ -43,12 +43,25 @@ $(".btn").on("click", function(event) {
     //console.log(traininfo.name);
 
     $("#trainName-input").val("");
-    $("#trainDesination-input").val("");
+    $("#trainDestination-input").val("");
     $("#trainFrequency-input").val("");
     $("#firstTrainTime-input").val("");
 
 
   });
+
+  //we took the current time and evaluated against the initial train time.
+  //if the current time was greater than the train time, we made the train time = train time + frequency.
+  //once the current time is less than or equal to train time, subtract the time that the train leaves from the time that it is.  that gives you time remaining.
+  
+  //current time
+  // if CT < TT 
+  // then TT = TT + File
+  // else if CT >= TT 
+  // then TL - CT
+
+  // var currentTime = moment().format('LT');
+
 
   database.on("child_added", function(childSnapshot) {
     console.log(childSnapshot.val());
@@ -57,13 +70,19 @@ $(".btn").on("click", function(event) {
     var trainDestination = childSnapshot.val().destination;
     var trainFrequency = childSnapshot.val().frequency;
     var firstTrainTime = childSnapshot.val().time;
+    console.log(trainFrequency, firstTrainTime);
 
+    var firstArrivalConverted = moment(firstTrainTime, "HH:mm").subtract(trainFrequency, "days");
+    var diffTime = moment().diff(moment(firstArrivalConverted), "minutes");
+    var mintuesAway = diffTime % trainFrequency;
+    console.log(mintuesAway);
     var newRow = $("<tr>").append(
       $("<th>").text(trainName),
       $("<td>").text(trainDestination),
       $("<td>").text(trainFrequency),
-      $("<td>").text(firstTrainTime)
+      $("<td>").text(firstTrainTime),
+      $("<td>").text(mintuesAway)
     );
-
     $(".trains").append(newRow);
   });
+  
