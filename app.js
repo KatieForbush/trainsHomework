@@ -29,7 +29,7 @@ firebase.initializeApp(config);
 
 
 var database = firebase.database().ref();
-
+database.remove();
 for (var i = 0; i < seedInfo.length; i++){
   let traininfo = {
     name: seedInfo[i].trainName,
