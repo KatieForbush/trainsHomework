@@ -23,8 +23,8 @@ html body {
     width: 800px;
     margin: 0 auto;
     padding: 30px;
-    border: 1px solid #333;
     color: #fff;
+    align-content: center;
 }
 
 #Date {
@@ -44,7 +44,7 @@ ul {
 
 ul li {
     display: inline;
-    font-size: 10em;
+    font-size: 5em;
     text-align: center;
     font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
     text-shadow: 0 0 5px #00c6ff;
